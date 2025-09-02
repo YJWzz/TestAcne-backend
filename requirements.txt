@@ -11,10 +11,12 @@ numpy
 opencv-python-headless==4.11.0.86
 pymysql==1.1.0
 requests==2.32.3
+flask-cors==4.0.0
 
 # ----- 追加 CPU 版 PyTorch & Ultralytics -----
 torch==2.3.0+cpu
 torchvision==0.18.0+cpu
 torchaudio==2.3.0+cpu
 ultralytics==8.2.23
+
 --extra-index-url https://download.pytorch.org/whl/cpu
