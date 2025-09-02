@@ -10,8 +10,6 @@ from werkzeug.utils import secure_filename
 from ultralytics import YOLO               # ⬅️ 只用 Ultralytics
 from datetime import datetime
 from flask_cors import CORS
-from dotenv import load_dotenv   # 本地開發使用，Render 會自動注入
-load_dotenv()                    # 若上線時沒安裝 python-dotenv，可拿掉
 
 # ---------- 基本設定 ----------
 app = Flask(__name__)                       # ❷ 拿掉 static_folder
@@ -259,3 +257,4 @@ if __name__ == "__main__":
         port=int(os.getenv("FLASK_PORT", 5000)),
         debug=True               # 本地開 debug 方便追錯
     )
+
