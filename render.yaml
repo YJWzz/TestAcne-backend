@@ -1,8 +1,7 @@
 services:
   - type: web
     env: python          # ← 確保是 python 而不是 docker
-    pythonVersion: 3.11  # ← 加這行
-    rootDir: "."         # 如無子資料夾，寫 "."
+    pythonVersion: 3.11.8  # ← 加這行
     startCommand: python Acne.py
     buildCommand: pip install -r requirements.txt   # 可留，也可省略
     autoDeploy: true
@@ -17,4 +16,5 @@ services:
         sync: false
       - key: DB_NAME
         sync: false
+
 
