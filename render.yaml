@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: acne-api
-    env: python
-    pythonVersion: 3.11
+    env: python          # ← 確保是 python 而不是 docker
+    pythonVersion: 3.11  # ← 加這行
+    rootDir: "."         # 如無子資料夾，寫 "."
     startCommand: python Acne.py
+    buildCommand: pip install -r requirements.txt   # 可留，也可省略
     autoDeploy: true
     envVars:
       - key: DB_HOST   # 這裡只做佔位，真實值仍在 Dashboard 填 Secret
@@ -16,3 +17,4 @@ services:
         sync: false
       - key: DB_NAME
         sync: false
+
