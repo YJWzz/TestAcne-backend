@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: acne-api
+    env: python
+    pythonVersion: 3.11
+    startCommand: python Acne.py
+    autoDeploy: true
+    envVars:
+      - key: DB_HOST   # 這裡只做佔位，真實值仍在 Dashboard 填 Secret
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_NAME
+        sync: false

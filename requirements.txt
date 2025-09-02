@@ -1,0 +1,20 @@
+# ---------- 基本 ----------
+flask==3.0.2
+gunicorn==21.2.0
+
+# ---------- 推論( 無ultralytics==8.2.23 ) ----------
+# onnx==1.16.0
+# onnxruntime==1.17.3
+numpy
+
+# ---------- 其他工具 ----------
+opencv-python-headless==4.11.0.86
+pymysql==1.1.0
+requests==2.32.3
+
+# ----- 追加 CPU 版 PyTorch & Ultralytics -----
+torch==2.3.0+cpu
+torchvision==0.18.0+cpu
+torchaudio==2.3.0+cpu
+ultralytics==8.2.23
+--extra-index-url https://download.pytorch.org/whl/cpu
