@@ -13,7 +13,14 @@ from flask_cors import CORS
 
 # ---------- 基本設定 ----------
 app = Flask(__name__)                       # ❷ 拿掉 static_folder
-CORS(app, resources={r"/api/*": {"origins": "https://yjwzz.github.io"}})# ❶ 允許跨域
+CORS(app, resources={
+    r"/api/*": {
+        "origins": [
+            "https://acnefrontend.onrender.com",  # 你的前端
+            "http://localhost:3000"               # 本地開發
+        ]
+    }
+})
 BASE_UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXT = {'png', 'jpg', 'jpeg'}
 os.makedirs(BASE_UPLOAD_FOLDER, exist_ok=True)
@@ -257,4 +264,5 @@ if __name__ == "__main__":
         port=int(os.getenv("FLASK_PORT", 5000)),
         debug=True               # 本地開 debug 方便追錯
     )
+
 
