@@ -212,7 +212,7 @@ def result():
         prompt = '\n'.join(f"{r['face_part']} face: {r['severity']}" for r in results)
         try:
             res = requests.post(
-                'http://localhost:5678/webhook/chatbot',
+                'https://YJWzz-n8n-free.hf.space/webhook/chatbot',
                 json={"message": f"根據以下痘痘分析結果提供衛教建議和可參考資源：\n{prompt}"}
             )
             res.raise_for_status()
@@ -267,3 +267,4 @@ if __name__ == "__main__":
         port=int(os.getenv("FLASK_PORT", 5000)),
         # debug=True               # 本地開 debug 方便追錯
     )
+
