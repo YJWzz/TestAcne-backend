@@ -139,6 +139,8 @@ def save_to_db(uid, fname, part, sev, conf, cnt, ts):
 
 # ---------- 前端 SPA 入口 ----------
 @app.route('/')
+def index():
+    return "Backend is running", 200
 @app.route('/Chatbot')
 @app.route('/Inform')
 @app.route('/AnalysisResult')
@@ -263,8 +265,5 @@ if __name__ == "__main__":
     app.run(
         host=os.getenv("FLASK_HOST", "0.0.0.0"),
         port=int(os.getenv("FLASK_PORT", 5000)),
-        debug=True               # 本地開 debug 方便追錯
+        # debug=True               # 本地開 debug 方便追錯
     )
-
-
-
