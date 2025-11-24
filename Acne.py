@@ -153,7 +153,7 @@ def upload():
     uid = secure_filename(request.form.get('user_id', 'anonymous'))
     save_user_folder(uid)
     folder = os.path.join(app.config['UPLOAD_FOLDER'], uid)
-    ts     = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    ts = datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d %H:%M:%S") #台灣地區時間
     results = []
     for part in ['left', 'middle', 'right']:
         f = request.files.get(part)
@@ -267,5 +267,6 @@ if __name__ == "__main__":
         port=int(os.getenv("FLASK_PORT", 5000)),
         # debug=True               # 本地開 debug 方便追錯
     )
+
 
 
