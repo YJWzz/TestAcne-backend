@@ -10,6 +10,7 @@ from werkzeug.utils import secure_filename
 from ultralytics import YOLO               # ⬅️ 只用 Ultralytics
 from datetime import datetime
 from flask_cors import CORS
+from zoneinfo import ZoneInfo
 
 # ---------- 基本設定 ----------
 app = Flask(__name__)                       # ❷ 拿掉 static_folder
@@ -267,6 +268,7 @@ if __name__ == "__main__":
         port=int(os.getenv("FLASK_PORT", 5000)),
         # debug=True               # 本地開 debug 方便追錯
     )
+
 
 
 
